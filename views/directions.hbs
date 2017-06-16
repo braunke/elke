@@ -1,0 +1,52 @@
+<div id="headerImage"><img src="/images/elkeTitle.jpg" alt="Elke's Treasures"></div>
+<br>
+    <!--From the Google maps developer documentation
+    https://developers.google.com/maps/tutorials/fundamentals/adding-a-google-map-->
+
+
+
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVHRfP2CNHxDRWT7tWMgYBXm7ns-hQLB8&callback=initMap">
+    </script>
+
+    <script>
+        function initMap() {
+
+            //The mapCanvas is the HTML element that will hold the map
+            var mapDiv = document.getElementById("map");
+
+            //Set three required options to display the map
+            //Other options such as preventing scrolling or zooming, are available
+            var mapOptions = {
+                center : new google.maps.LatLng(44.070624, -94.37855),   // Lat and long to center the map on
+                zoom : 12,                                     // 0 = the whole world, 22 = max zoom in
+                mapTypeId : google.maps.MapTypeId.ROADMAP      //or SATELLITE, HYBRID or TERRAIN
+            };
+
+            //And create the map, with the options specified. It will be automatically added to the page.
+            var map = new google.maps.Map(mapDiv, mapOptions);
+
+            var marker = {
+                position : new google.maps.LatLng(44.070624, -94.37855),
+                map:map,
+                draggabe : false,
+                title : "Elke's Treasures"
+            };
+            var elkeMarker = new google.maps.Marker(marker);
+
+
+        }
+
+    </script>
+<br>
+<p>
+    Address: <br>
+    84576, 285th Ln, Madelia, MN 56062 <br>
+    <a href="https://www.google.com/maps/place/Elke's+Treasures/@44.0697718,-94.3801737,17z/data=!4m5!3m4!1s0x0:0xda4b0bb8d727d19a!8m2!3d44.0705849!4d-94.3783709" target="_blank">Directions</a>
+</p>
+<br>
+<div id="roadsidePicture"><img src="/images/placeholder.jpg" alt="Picture"></div>
+<br>
+<div id="map"></div>
+<br>
+<p><a href="/">Back</a></p>
